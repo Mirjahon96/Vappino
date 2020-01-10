@@ -1,0 +1,24 @@
+#main-navbar {
+  nav {
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+    transition: .4s all ease;
+  }
+
+  .v-toolbar {
+    background: transparent;
+
+    &__content {
+      align-items: center;
+      width: 100%;
+      position: fixed;
+    }
+    .v-btn__content {
+      text-transform: capitalize;
+      font-size: 15px;
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+}

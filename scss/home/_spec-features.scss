@@ -1,0 +1,99 @@
+#spec-features {
+  .tab {
+    position: relative;
+
+    &.active1, &.active2 {
+      background: linear-gradient(to right, rgba(9, 179, 239, 1) 0%, rgba(30, 80, 226, 1) 100%);
+    
+    .v-icon, .headline, .v-card__text p {
+      color: #fff !important;
+      }
+    }
+    
+    &.active {
+      &1 {
+        &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        left: inherit;
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        right: -10px;
+        display: block;
+        background: #1968e5;
+        border-radius: 90px;
+        box-shadow: 0px 0px 0px 5px rgba(247, 247, 247, 1);
+       }
+       &::after {
+        content: "";
+        position: absolute;
+        z-index: 9;
+        top: 50%;
+        margin-top: -1px;
+        right: -100px;
+        width: 100px;
+        height: 2px;
+        display: inline-block;
+        background: $primary-text;
+        }
+      }
+      &2 {
+        &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        display: block;
+        background: #1968e5;
+        border-radius: 90px;
+        box-shadow: 0px 0px 0px 5px rgba(247, 247, 247, 1);
+       }
+       &::after {
+        content: "";
+        position: absolute;
+        z-index: 9;
+        top: 50%;
+        margin-top: -1px;
+        left: -100px;
+        width: 100px;
+        height: 2px;
+        display: inline-block;
+        background: $primary-text;
+        }
+      }
+    }
+
+    &:hover {
+      background: linear-gradient(to right, rgba(9, 179, 239, 1) 0%, rgba(30, 80, 226, 1) 100%);
+    
+    .v-icon, .headline, .v-card__text p {
+      color: #fff !important;
+      }
+    }
+  }
+
+  .tab-images {
+    position: relative;
+    top: -25px;
+    background: url('/img/phone.png') no-repeat top center;
+    height: 100%;
+    background-size: 100% 100%;
+    padding: 87px 36px 99px 44px;
+
+    img {
+      max-width: 100%;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  
+  
+}

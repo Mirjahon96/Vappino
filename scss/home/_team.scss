@@ -1,0 +1,26 @@
+#team {
+  .child-btn {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease-in;
+    }
+  .root-btn {
+    position: relative;
+    .parent-btn {
+      opacity: 1;
+      transition: all .3s ease-in;
+    }
+    &:hover > .child-btn {
+      opacity: 1;
+      transition: opacity .3s ease-in;
+    }
+    &:hover .parent-btn {
+      opacity: 0;
+    }
+  }
+}

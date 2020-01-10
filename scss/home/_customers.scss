@@ -1,0 +1,82 @@
+#customers {
+  position: relative;
+
+  .slider {
+    .owl-stage {
+      display: flex;
+      align-items: center;
+    }
+
+    .owl-carousel .owl-stage-outer {
+      padding: 50px 0 40px 0;
+    }
+
+    .owl-nav {
+      display: block;
+    }
+
+    .owl-prev {
+      position: absolute;
+      text-align: center;
+      font-size: 30px;
+      background: #e0e0e0;
+      color: #fff;
+      top: 130px;
+      border-radius: 50%;
+      left: -7%;
+      width: 45px;
+      height: 45px;
+      outline: none;
+      transition: all .2s ease-in;
+    }
+    .owl-next {
+      position: absolute;
+      text-align: center;
+      font-size: 30px;
+      background: #e0e0e0;
+      color: #fff;
+      top: 130px;
+      right: -7%;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      outline: none;
+      transition: all .2s ease-in;
+    }
+
+    .owl-prev, .owl-next {
+      &:hover {
+        background: $primary-text;
+        transition: background .2s ease-in;
+      }
+    }
+
+    .v-card {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        height: 2px;
+        width: 100px;
+        background: linear-gradient(to right, rgba(9, 179, 239, 1) 0%, rgba(30, 80, 226, 1) 100%);
+      }
+    }
+
+    .quote {
+      padding-left: 60px;
+      position: relative;
+      .v-icon {
+        position: absolute;
+        bottom: 0px;
+        left: -15px;
+        line-height: normal;
+      }
+    }
+
+    .avatar-box {
+      margin-top: -65px;
+    }
+  }
+}

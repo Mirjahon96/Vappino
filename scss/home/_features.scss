@@ -1,0 +1,35 @@
+#features {
+  position: relative;
+  .card {
+    position: relative;
+    overflow: hidden;
+    &::before {
+    position: absolute;
+    content: "";
+    left: -80px;
+    top: 0;
+    height: 2px;
+    width: 70px;
+    transition: all 0.5s ease-in-out;
+    background: linear-gradient(to right, rgba(9, 179, 239, 1) 0%, rgba(30, 80, 226, 1) 100%);
+    }
+
+    &:hover::before {
+        left: 0;
+      }
+      &:hover::after {
+        right: 0;
+      }
+      
+    &::after {
+      position: absolute;
+      content: "";
+      right: -80px;
+      bottom: 0;
+      height: 2px;
+      width: 70px;
+      transition: all 0.5s ease-in-out;
+      background: linear-gradient(to right, rgba(9, 179, 239, 1) 0%, rgba(30, 80, 226, 1) 100%);
+    }
+  }
+}

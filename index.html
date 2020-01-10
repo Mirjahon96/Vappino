@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="dist/css/vuetify-v2.2.0-beta.0.min.css">
+  <link rel="stylesheet" href="dist/css/animate.css">
+  <link rel="stylesheet" href="dist/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="dist/css/main.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+  <div id="appino">
+    <v-app>
+      <!-- Section: Navbar -->
+      <section id="main-navbar">
+        <nav class="navbar" v-on:scroll="navbarScroll">
+          <v-container py-0>
+            <v-toolbar fixed flat prominent dense>
+              <a href="#">
+                <v-img src="img/logo.png" width="70px" class="navLogo"></v-img>
+              </a>
+
+              <v-spacer></v-spacer>
+
+              <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp">
+                <v-btn text v-for="btn in toolbarBtn" :key="btn.id" :href="btn.href">{{ btn.text }}</v-btn>
+              </v-toolbar-items>
+              <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
+            </v-toolbar>
+          </v-container>
+        </nav>
+      </section>
+
+      <!-- Navigation Drawer -->
+      <v-navigation-drawer v-model="drawer" fixed temporary>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="font-weight-bold blue--text text--lighten-1">Appino</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-divider></v-divider>
+
+        <v-list dense>
+          <v-list-item-group color="primary">
+            <v-list-item v-for="item in toolbarBtn" :key="item.id" link :href="item.href">
+              <v-list-item-content>
+                <v-list-item-title color="primary">
+                  {{ item.text }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
+
+      <v-content>
+
+        <!-- Section: Showcase -->
+        <section id="showcase">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <v-carousel cycle hide-delimiter-background :show-arrows="false">
+                  <!-- 1 -->
+                  <v-carousel-item>
+                    <v-sheet height="100%" class="transparent">
+                      <v-row align="center">
+                        <v-col cols="12" sm="8">
+                          <div class="wow bounceInLeft animated pl-2" data-delay="0.5s">
+                            <p class="flow-text font-weight-medium">
+                              <b>●</b>
+                              Appino provide amazing & outstanding feature</p>
+                            <h1 class="display-4 font-weight-black text-uppercase mb-4"
+                              :class="{'display-3': $vuetify.breakpoint.smAndDown}">Awesome
+                              Mobile App</h1>
+                          </div>
+
+                          <div class="links">
+                            <h5 class="title mb-5 wow bounceInLeft animated" data-delay="1s">Free Download Here</h5>
+                            <div class="d-flex justify-between wow bounceInRight animated" data-delay="1s">
+                              <v-btn x-large icon>
+                                <v-icon>mdi-apple</v-icon>
+                              </v-btn>
+                              <v-btn x-large icon>
+                                <v-icon>mdi-android</v-icon>
+                              </v-btn>
+                              <v-btn x-large icon>
+                                <v-icon>mdi-windows</v-icon>
+                              </v-btn>
+                            </div>
+                          </div>
+                        </v-col>
+                        <v-col cols="12" sm="4" class="hidden-xs-only">
+                          <div class="img-content wow bounceInRight animated" data-delay="1s">
+                            <v-img src="img/01.png"></v-img>
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-sheet>
+                  </v-carousel-item>
+                  <!-- 2 -->
+                  <v-carousel-item>
+                    <v-sheet height="100%" class="transparent">
+                      <v-row align="center">
+                        <v-col cols="12" sm="4" class="hidden-xs-only">
+                          <div class="img-content wow fadeInLeft animated" data-delay="1s">
+                            <v-img src="img/01.png"></v-img>
+                          </div>
+                        </v-col>
+                        <v-col cols="12" sm="8">
+                          <div class="wow bounceInRight animated" data-delay="0.5s">
+                            <p class="flow-text font-weight-medium">
+                              <b>●</b>
+                              Appino provide amazing & outstanding feature</p>
+                            <h1 class="display-4 font-weight-black text-uppercase mb-4"
+                              :class="{'display-3': $vuetify.breakpoint.smAndDown}">Awesome Mobile App</h1>
+                          </div>
+                          <div class="links">
+                            <h5 class="title mb-5 wow fadeInRight animated" data-delay="1">Free Download Here</h5>
+                            <div class="d-flex justify-between wow fadeInUp animated" data-delay="1">
+                              <v-btn x-large icon>
+                                <v-icon>mdi-apple</v-icon>
+                              </v-btn>
+                              <v-btn x-large icon>
+                                <v-icon>mdi-android</v-icon>
+                              </v-btn>
+                              <v-btn x-large icon>
+                                <v-icon>mdi-windows</v-icon>
+                              </v-btn>
+                            </div>
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-sheet>
+                  </v-carousel-item>
+                  <!-- 3 -->
+                  <v-carousel-item>
+                    <v-sheet height="100%" class="transparent">
+                      <v-row align="center">
+                        <v-col cols="12" sm="8">
+                          <div class="wow bounceInLeft animated pl-2" data-delay="0.5s">
+                            <p class="flow-text font-weight-medium">
+                              <b>●</b>
+                              Appino provide amazing & outstanding feature</p>
+                            <h1 class="display-4 font-weight-black text-uppercase mb-4"
+                              :class="{'display-3': $vuetify.breakpoint.smAndDown}">Awesome Mobile App</h1>
+                          </div>
+                          <div class="links">
+                            <h5 class="title mb-5 wow bounceInRight animated" data-delay="1s">Free Download Here</h5>
+                            <div class="d-flex justify-between wow bounceInUp animated" data-delay="1s">
+                              <v-btn x-large icon>
+                                <v-icon>mdi-apple</v-icon>
+                              </v-btn>
+                              <v-btn x-large icon>
+                                <v-icon>mdi-android</v-icon>
+                              </v-btn>
+                              <v-btn x-large icon>
+                                <v-icon>mdi-windows</v-icon>
+                              </v-btn>
+                            </div>
+                          </div>
+                        </v-col>
+                        <v-col cols="12" sm="4" class="hidden-xs-only">
+                          <div class="img-content wow rotateInDownRight animated" data-delay="1s">
+                            <v-img src="img/01.png"></v-img>
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-sheet>
+                  </v-carousel-item>
+                </v-carousel>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Features -->
+        <section id="features" class="py-12">
+          <v-container>
+            <!-- 1 row -->
+            <v-row>
+              <v-col sm="12">
+                <div class="text-content text-center py-8">
+                  <h2 class="display-1 font-weight-bold">Amazing Features</h2>
+                  <div class="divider"></div>
+                  <p class="subtitle grey--text text--darken-2 psides-5">We've been working really hard to improve the
+                    appino
+                    with this amazing new features that you aked for! Check out the appino’s new amazing features.</p>
+                </div>
+              </v-col>
+            </v-row>
+            <!-- 2 row -->
+            <v-row>
+              <v-col cols="12" sm="12" md="6" lg="4" v-for="card in featuresCard" :key="card.id">
+                <v-card class="px-4 card">
+                  <v-card-title class="d-block">
+                    <img :src="card.img" class="mb-2" />
+                    <h4 class="headline font-weight-bold">{{ card.title }}</h4>
+                  </v-card-title>
+                  <v-card-text class="grey--text text--darken-1">
+                    <p>{{ card.description }}</p>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: About Us -->
+        <section id="about" class="py-12">
+          <v-container>
+            <v-row dense align="center">
+              <v-col cols="12" sm=12 md="6" lg="5" class="about-bg">
+                <v-img src="img/about-us.jpg"></v-img>
+                <a href="#!">
+                  <v-icon size="40px" color="primary">mdi-play</v-icon>
+                </a>
+                <div class="pulse-container">
+                  <div class="pulse pulse-1"></div>
+                  <div class="pulse pulse-2"></div>
+                  <div class="pulse pulse-3"></div>
+                </div>
+
+              </v-col>
+              <v-col cols="12" sm="12" md="6" lg="7">
+                <v-sheet color="grey lighten-4 pa-12">
+                  <h2 class="display-1 font-weight-bold">About Our App</h2>
+                  <div class="secondary-divider mb-4"></div>
+                  <h4 class="grey--text text--darken-1 mb-4">This Appino application delivers the most trusted services
+                    for your bussiness to succeed in the
+                    global app environment.</h4>
+                  <p class="body-2 grey--text text--darken-1 mb-5">All the Lorem Ipsum generators on the Internet tend
+                    to
+                    repeat predefined chunks as necessary,
+                    naking this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+                    combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+                    reasonable.</p>
+                  <v-btn color="primary" rounded x-large>Download</v-btn>
+                </v-sheet>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Special Features -->
+        <section id="spec-features" class="py-12">
+          <v-container>
+            <!-- 1 -->
+            <v-row>
+              <v-col cols="12">
+                <div class="text-content text-center mb-6">
+                  <h2 class="display-1 font-weight-bold">Special Features</h2>
+                  <div class="divider"></div>
+                  <p class="subtitle grey--text text--darken-2 psides-5">Appino is launch with everything you need.
+                    We've got a lot of amaing and cool features. so here we go, with unlimited features. go and check
+                    out!</p>
+                </div>
+              </v-col>
+            </v-row>
+            <!-- This Tabs created without vuetify because vuetify can't... -->
+            <v-row>
+              <!-- 1 -->
+              <v-col xs="12" sm="6" md="4" lg="4">
+                <v-card :ripple="false" elevation="6" v-for="tab in tabs1" :key='tab.id'
+                  @click="selectedTab = tab.title" :class="{ active1 : selectedTab == tab.title }"
+                  class="mb-8 px-6 py-3 tab text-right">
+
+                  <v-list-item>
+                    <v-list-item-content>
+                      <v-list-item-title class="headline font-weight-medium">{{ tab.title }}</v-list-item-title>
+                    </v-list-item-content>
+                    <v-icon color="primary" x-large class="ml-3">{{ tab.icon }}</v-icon>
+                  </v-list-item>
+
+                  <v-card-text class="pa-2">
+                    <p class="grey--text text--darken-2">{{ tab.text }}</p>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+              <!-- 2 -->
+              <v-col md="4" lg="4" class="hidden-sm-and-down">
+                <div class="tab-images">
+                  <!-- 1 -->
+                  <template v-if="selectedTab == 'Responsive Design'">
+                    <img src="/img/spec-feat-1.jpg">
+                  </template>
+                  <!-- 2 -->
+                  <template v-if="selectedTab == 'Easy to Use'">
+                    <img src="/img/spec-feat-2.jpg">
+                  </template>
+                  <!-- 3 -->
+                  <template v-if="selectedTab == 'Well Documention'">
+                    <img src="/img/spec-feat-3.jpg">
+                  </template>
+                  <!-- 4 -->
+                  <template v-if="selectedTab == 'Perfect Showcase'">
+                    <img src="/img/spec-feat-4.jpg">
+                  </template>
+                  <!-- 5 -->
+                  <template v-if="selectedTab == 'Unlimited Features'">
+                    <img src="/img/spec-feat-5.jpg">
+                  </template>
+                  <!-- 6 -->
+                  <template v-if="selectedTab == 'And Many More'">
+                    <img src="/img/spec-feat-6.jpg">
+                  </template>
+                </div>
+              </v-col>
+              <!-- 3 -->
+              <v-col xs="12" sm="6" md="4" lg="4">
+                <v-card :ripple="false" elevation="6" v-for="tab in tabs2" :key='tab.id'
+                  @click="selectedTab = tab.title" :class="{ active2 : selectedTab == tab.title }"
+                  class="mb-8 px-6 py-3 tab">
+
+                  <v-list-item>
+                    <v-icon color="primary" x-large class="mr-3">{{ tab.icon }}</v-icon>
+                    <v-list-item-content>
+                      <v-list-item-title class="headline font-weight-medium">{{ tab.title }}</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+
+                  <v-card-text class="pa-2">
+                    <p class="grey--text text--darken-2">{{ tab.text }}</p>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: App Screenshots -->
+        <section id="screenshots">
+          <v-container fluid class="pa-0">
+            <v-row>
+              <v-col sm="12" md="6" class="box linear-background">
+                <div class="content white--text" :class="{'pa-7' : $vuetify.breakpoint.smAndDown}">
+                  <h3 class="display-1 font-weight-medium">App Screenshots</h3>
+                  <div class="secondary-divider white mt-3 mb-5"></div>
+                  <h4 class="white--text">Appino is here with its best screenshot, from this photo gallery you
+                    can
+                    get idea about this application.</h4>
+                  <div class="mt-10">
+                    <h3 class="headline mb-3">Awesome Design</h3>
+                    <p class="body-2">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                      been the industry's
+                      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                      scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                      leap into electronic typesetting, Lorem Ipsum is simply dummy text of the printing and typesetting
+                      indus</p>
+                  </div>
+                </div>
+              </v-col>
+              <v-col sm="12" md="6" class="py-10">
+                <div class="slider">
+                  <div class="owl-carousel owl-theme" v-carousel-one>
+                    <div class="item" v-for="slider in imgCarouselScreenshots" :key="slider.id">
+                      <a href="#!">
+                        <img :src="slider.img" class="responsive-img">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: How It Work? -->
+        <section id="how-it-work" class="py-12">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div class="text-content text-center py-8 mb-4">
+                  <h2 class="display-1 font-weight-bold">How It Work?</h2>
+                  <div class="divider"></div>
+                  <p class="subtitle grey--text text--darken-2 psides-5">Appino is available with new technology and new
+                    creative ideas, which works with high resolutions. There is many more features available with
+                    different and unique work.</p>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" sm="6" md="3" v-for="work in works" :key="work.id">
+                <v-hover v-slot:default="{ hover }">
+                  <v-card class="text-center" :elevation="hover ? 6 : 2">
+                    <v-card-text class="pt-8 pb-6">
+                      <v-avatar size="70px" class="linear-background">
+                        <v-icon size="36px" dark>{{ work.icon }}</v-icon>
+                      </v-avatar>
+                      <h5 class="title py-4 grey--text text--darken-4">{{ work.title }}</h5>
+                      {{ work.text }}
+                    </v-card-text>
+                  </v-card>
+                </v-hover>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Our Customers -->
+        <section id="customers" class="py-12 grey lighten-4">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div class="text-center py-8">
+                  <h2 class="display-1 font-weight-bold">Loved By Our Customers</h2>
+                  <div class="divider"></div>
+                  <p class="subtitle grey--text text--darken-2">Our Customer are our priority. we believe in providing
+                    best services to them.</p>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12">
+                <div class="slider">
+                  <div class="owl-carousel owl-theme" v-carousel-two>
+                    <v-card flat class="item pa-7" v-for="customer in imgCarouselCustomers" :key="customer.id">
+                      <div class="avatar-box">
+                        <v-avatar size="80px">
+                          <img :src="customer.avatar" alt="customer">
+                        </v-avatar>
+                      </div>
+
+                      <v-card-text class="pa-0">
+                        <div class="quote py-2">
+                          <v-icon size="70px" color="grey lighten-3">mdi-format-quote-open</v-icon>
+                          <h5 class="title grey--text text--darken-4">{{ customer.name }}</h5>
+                          <span class="body-2 grey--text text--darken-4 font-weight-medium">{{ customer.job }},
+                            Appino</span>
+                        </div>
+                        {{ customer.text }}
+                      </v-card-text>
+                    </v-card>
+                  </div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Meet The Team -->
+        <section id="team" class="py-12">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div class="text-center py-8">
+                  <h2 class="display-1 font-weight-bold">Meet The Team</h2>
+                  <div class="divider"></div>
+                  <p class="subtitle grey--text text--darken-2 psides-5">Meet the faces behind our company. Our team
+                    offers the most up-to-date, sustainable custom solutions to the problem. They work so hard to
+                    provide best to their customers.</p>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" sm="6" md="3" v-for="team in teamMembers" :key="team.id">
+                <v-hover>
+                  <template v-slot:default="{ hover }">
+                    <v-card tile class="mx-auto text-center">
+                      <v-img :src="team.img"></v-img>
+                      <v-fade-transition>
+                        <v-overlay v-if="hover" absolute color="rgba(30, 80, 226, 1)">
+                          <v-card-text>
+                            <h5 class="headline mb-1">{{ team.name }}</h5>
+                            <p class="body-1">{{ team.spec }}</p>
+                            <div class="root-btn">
+                              <div class="parent-btn">
+                                <v-btn icon rounded color="primary" dark class="white px-4">
+                                  <v-icon left>mdi-share-variant</v-icon>
+                                  Share With
+                                </v-btn>
+                              </div>
+                              <div class="child-btn">
+                                <v-btn icon color="primary" class="white mr-1" v-for="social in teamSocialIcons"
+                                  :key="social.id">
+                                  <v-icon size="18px">{{ social.icon }}</v-icon>
+                                </v-btn>
+                              </div>
+                            </div>
+                          </v-card-text>
+                        </v-overlay>
+                      </v-fade-transition>
+                    </v-card>
+                  </template>
+                </v-hover>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Statistics -->
+        <section id="statistics" class="py-10">
+          <v-container>
+            <v-row align="center">
+              <v-col cols="6" sm="6" md="3" v-for="stats in statistics" :key="stats.id">
+                <div class="box py-8 text-center">
+                  <v-icon size="60px" dark>{{ stats.icon }}</v-icon>
+                  <h4 class="display-1 grey--text text--darken-4 font-weight-bold my-2">{{ stats.count }}
+                    <span data-purecounter-start="0" :data-purecounter-end="stats.count" class="purecounter"
+                      data-purecounter-duration="30" data-purecounter-delay="10"></span>
+                  </h4>
+                  <p class="white--text font-weight-bold text-uppercase mb-0">{{ stats.title }}</p>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: FQA -->
+        <section id="fqa" class="py-12">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div class="text-center py-8">
+                  <h2 class="display-1 font-weight-bold">Frequently Asked Questions</h2>
+                  <div class="divider"></div>
+                  <p class="subtitle grey--text text--darken-2 psides-5">If you got any query? Here you go! Don't
+                    hesitate to ask any Question! We are happy to help with your questions. Here you go! Don't hesitate
+                    to ask any Question! We are happy to help with your questions.</p>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row align="center">
+              <!-- 1 -->
+              <v-col cols="12" md="6" class="text-center">
+                <img src="img/fqa.png" class="responsive-img" />
+              </v-col>
+              <!-- 2 -->
+              <v-col cols="12" md="6">
+                <v-expansion-panels class="mb-6 panels" focusable v-model="panel">
+                  <v-expansion-panel v-for="list in fqaLists" :key="list.id">
+                    <v-expansion-panel-header expand-icon="mdi-add">{{ list.title }}
+                      <template v-slot:actions>
+                        <v-icon color="primary">$expand</v-icon>
+                      </template>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      <v-row>
+                        <!-- 1 -->
+                        <v-col :cols="list.col3" :class="list.display">
+                          <img :src="list.img" class="responsive-img">
+                        </v-col>
+                        <!-- 2 -->
+                        <v-col :cols="list.col9">
+                          {{ list.text }}
+                        </v-col>
+                      </v-row>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Call To Action -->
+        <section id="cta" class="py-12">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div class="box text-center pt-8 pb-4">
+                  <h2 class="display-1 white--text font-weight-bold">Download App</h2>
+                  <div class="divider"></div>
+                  <p class="subtitle white--text psides-5">There are many variations of passages of Lorem
+                    Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
+                    randomised words which don't look even slightly believable.</p>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" class="text-center box">
+                <v-btn v-for="btn in ctaBtn" :key="btn.id" :href="btn.href" outlined icon x-large rounded dark
+                  class="ma-2 px-8">
+                  <v-icon left>{{ btn.icon }}</v-icon>
+                  {{ btn.text }}
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Pricing -->
+        <section id="pricing" class="py-12 grey lighten-4">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div class="text-center py-8">
+                  <h2 class="display-1 font-weight-bold">Price</h2>
+                  <div class="divider"></div>
+                  <p class="subtitle grey--text text--darken-2">We're here with best pricing offers. Get start your
+                    business with our awesome pricing plan. Here is affordable prices available. Go with your choice and
+                    enjoy the services.</p>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <!-- 1 -->
+              <v-col cols="12" sm="6" md="3" v-for="price in pricing" :key="price.id">
+                <v-card outlined class="text-center">
+                  <v-card-title class="d-block linear-background py-6 px-5">
+                    <h2 class="display-2 white--text font-weight-bold">
+                      <small class="headline"> $</small>{{price.price}}<small class="subtitle-1"> /Month</small>
+                    </h2>
+                    <p class="white--text body-2 text-uppercase mt-1 mb-0 font-weight-medium">{{ price.plan }}</p>
+                  </v-card-title>
+                  <v-card-text class="mt-4">
+                    <ul>
+                      <li v-for="li in price.lists" :key="li.id">{{ li }}</li>
+                    </ul>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="d-block py-8">
+                    <v-btn dark large rounded class="linear-background px-8">
+                      Purchase
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Blog Post -->
+        <section id="blog-post" class="py-12">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div class="text-center py-8">
+                  <h2 class="display-1 font-weight-bold">Latest Blog Post</h2>
+                  <div class="divider"></div>
+                  <p class="subtitle grey--text text--darken-2">We have completely updated our work, making it much
+                    easier for you to find the information you need. Check out the recently updated work and learn more
+                    about application.</p>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" sm="12" md="4" v-for="post in blogPost" :key="post.id">
+                <v-card>
+                  <v-img :src="post.img"></v-img>
+                  <v-card-title class="grey--text text--darken-2 text-truncate font-weight-bold">{{ post.title }}
+                  </v-card-title>
+                  <v-card-subtitle class="py-3">
+                    <a href="#!" class="mr-3">
+                      <v-icon size="20px" class="float-left mr-1">mdi-calendar</v-icon>
+                      {{ post.date }}
+                    </a>
+                    <a href="#!">
+                      <v-icon size="20px">mdi-comment-outline</v-icon>
+                      {{ post.comment }}
+                    </a>
+                  </v-card-subtitle>
+                  <v-card-text class="grey--text text--darken-2">
+                    {{ post.text }}
+                  </v-card-text>
+
+                  <v-divider class="mx-4 mb-2"></v-divider>
+
+                  <v-card-actions class="px-4 pb-4">
+                    <a href="#!">
+                      <v-icon>mdi-account-circle</v-icon>
+                      {{ post.author }}
+                    </a>
+                    <v-spacer></v-spacer>
+                    <a href="#!">
+                      Read more
+                      <v-icon size="20px">mdi-chevron-right</v-icon>
+                    </a>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" class="text-center">
+                <v-btn dark large rounded depressed class="linear-background px-8 mt-5">Go To Blog</v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Subscribe Our Newsletter -->
+        <section id="subscribe" class="py-12 text-center">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div class="text-center py-6">
+                  <h2 class="display-1 white--text font-weight-bold">Subscribe Our Newsletter</h2>
+                  <div class="divider white-divider"></div>
+                  <p class="subtitle white--text">Subscribe to our newsletter and don’t miss new arrivals,
+                    the latest update and special offers from Appino!</p>
+                </div>
+              </v-col>
+            </v-row>
+            <v-form ref="form" @submit.prevent="submit" v-model="valid">
+              <v-row>
+                <v-col cols="12" sm="12" md="11" offset-md="1">
+                  <v-row justify="center">
+                    <v-col cols="12" sm="5">
+                      <v-text-field solo outlined rounded flat hide-details placeholder="Enter Your Email Here"
+                        v-model="subsEmail" :rules="emailSubsRules"></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="3" class="text-sm-left">
+                      <v-btn color="white" x-large rounded depressed @click="submit">Subscribe</v-btn>
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </v-form>
+            <v-snackbar v-model="subsSnackbar" absolute top right color="white" class="grey--text text--darken-2">
+              Message Sended!
+              <v-icon light>mdi-checkbox-marked-circle</v-icon>
+            </v-snackbar>
+
+            <div class="img-content" :class="{'pa-md-5' : $vuetify.breakpoint.mdAndDown}">
+              <img src="img/subscribe.png" class="responsive-img wow fadeInUp animated" data-delay="1s">
+            </div>
+          </v-container>
+        </section>
+
+        <!-- Section: Info -->
+        <section id="info" class="py-12" :class="{'mt-12' : $vuetify.breakpoint.smAndDown}">
+          <v-container>
+            <v-row>
+              <v-col cols="12" sm="4" class="text-center pa-6 mb-sm-12" v-for="box in infoBoxes" :key="box.id">
+                <v-avatar size="70px" class="linear-background">
+                  <v-icon size="30px" dark>{{ box.icon }}</v-icon>
+                </v-avatar>
+                <h4 class="headline my-3 font-weight-medium">{{ box.title }}</h4>
+                <span class="d-block grey--text text--darken-1 font-weight-bold">{{ box.text }}</span>
+                <span class="grey--text text--darken-1 font-weight-bold">{{ box.subtext }}</span>
+              </v-col>
+            </v-row>
+            <v-divider></v-divider>
+            <v-row>
+              <v-col cols="12" class="text-center mt-4">
+                <v-btn large icon v-for="icon in iconColors" :key="icon.id" class="mx-2" :color="icon.color">
+                  <v-icon>{{ icon.icon }}</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: Google Map -->
+        <section id="map"></section>
+
+        <!-- Section: Contact Us -->
+        <section id="contact">
+          <v-container>
+            <v-row>
+              <v-col cols="12" md="10" offset-md="1">
+                <v-card elevation="6" class="pa-10 box">
+                  <!-- 1 row -->
+                  <v-row>
+                    <v-col cols="12">
+                      <div class="text-center pb-8">
+                        <h2 class="display-1 font-weight-bold">Get In Touch</h2>
+                        <div class="divider"></div>
+                        <p class="subtitle grey--text text--darken-2">Do you have a question for us? we'd love to here
+                          from you and we
+                          would be happy to answer your questions. Reach out to us and we'll respond as soon as we can.
+                        </p>
+                      </div>
+                    </v-col>
+                  </v-row>
+                  <!-- 2 row -->
+                  <v-form ref="contactForm" v-model="contactValid" :lazy-validation="lazy">
+                    <v-row>
+                      <v-col cols="12" sm="6">
+                        <v-text-field v-for="field in contactForm" :key="field.id" flat outlined rounded solo
+                          :placeholder="field.placeholder" :v-model="field.model" :rules="field.rules">
+                        </v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6">
+                        <v-textarea rows="11" flat outlined solo label="Comment*"></v-textarea>
+                        <div class="text-right">
+                          <v-btn dark large rounded depressed class="linear-background px-8 mt-3" @click="validate">Send
+                            Message</v-btn>
+                        </div>
+                      </v-col>
+                    </v-row>
+                  </v-form>
+                  <v-snackbar v-model="contactSnackbar" absolute bottom center color="blue">
+                    Message Sended!
+                    <v-icon dark>mdi-checkbox-marked-circle</v-icon>
+                  </v-snackbar>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer" class="pt-8">
+          <v-footer padless color="white">
+            <v-container py-0>
+              <v-row>
+                <v-col cols="12" md="10" offset-md="1">
+                  <v-card flat tile class="text-center">
+                    <v-img class="mx-auto" height="80px" width="80px" src="img/logo-footer.png"></v-img>
+                    <v-card-text class="grey--text text--darken-2 psides-5">
+                      Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                      and scrambled it to make a type specimen book. It has survived not only five centuries,
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+              </v-row>
+              <v-divider></v-divider>
+              <v-row>
+                <v-col cols="12" md="10" offset-md="1" class="text-center">
+                  <p class="grey--text text--darken-2 mb-0 py-2">
+                    Copyright @ {{ new Date().getFullYear() }} <a href="#!">Appino</a>. All Rights Reserved
+                  </p>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-footer>
+        </footer>
+
+        <!-- Scroll To Top -->
+        <v-btn @click="toTop" fixed fab bottom right color="info darken-1">
+          <v-icon>mdi-open-in-app</v-icon>
+        </v-btn>
+        <!-- end -->
+
+      </v-content>
+    </v-app>
+  </div>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHkYHZ9_ZLinxfJjtqn-rg5W6RUCBtafs&"
+    type="text/javascript"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/vuetify-v2.2.0-beta.0.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/owl.carousel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

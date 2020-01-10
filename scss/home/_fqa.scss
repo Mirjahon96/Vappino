@@ -1,0 +1,11 @@
+#fqa {
+  .panels {
+    position: relative;
+  }
+  .v-expansion-panel {
+    margin-bottom: 1rem;
+  }
+  .v-expansion-panel-header--active {
+    background-color: #f5f7fb !important;
+  }
+}

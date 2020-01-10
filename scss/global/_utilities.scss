@@ -1,0 +1,121 @@
+// Colors
+$paragraph-text: #666;
+$primary-text: rgba(30, 80, 226, 1);
+
+.transparent {
+  background: transparent;
+}
+
+.shadow {
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navLogo {
+  transition: all .4s ease;
+}
+
+.flow-text {
+  font-size: 18px;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.linear-background {
+  background: linear-gradient(to right, rgba(9, 179, 239, 1) 0%, rgba(30, 80, 226, 1) 100%);
+}
+
+.responsive-img {
+  max-width: 100%;
+  position: relative;
+}
+
+.divider{
+  border: 2px solid #09b3ef;
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  &::before {
+  position: absolute;
+  content: "";
+  bottom: -8px;
+  right: 0;
+  width: 70px;
+  height: 1px;
+  background: #09b3ef;
+  transition: all 0.5s ease-in-out;
+  }
+  &::after {
+  position: absolute;
+  content: "";
+  top: -8px;
+  left: 0;
+  width: 70px;
+  height: 1px;
+  background: #1e50e2;
+  transition: all 0.5s ease-in-out;
+  }
+}
+
+.secondary-divider {
+  height: 1px;
+  background: #1e50e2;
+  width: 70px;
+  margin: 10px 0;
+}
+
+// Padding
+.psides-5 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+// Pulse Effect
+.pulse-container {
+  position: absolute;
+  width: 384px;
+  height: 384px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  .pulse {
+    position: absolute;
+    width: 384px;
+    height: 384px;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    border-radius: 320px;
+    background-clip: padding-box;
+    animation: animate-pulse 4s ease-in-out infinite;
+
+    &-1 {
+      animation-delay: 0s;
+    }
+    &-2 {
+      animation-delay: 1s;
+    }
+    &-3 {
+      animation-delay: 2s;
+    }
+  }
+}
+
+@keyframes animate-pulse {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(.7);
+    opacity: 0;
+  }
+}

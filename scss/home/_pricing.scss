@@ -1,0 +1,40 @@
+#pricing {
+  position: relative;
+  .v-card {
+    position: relative;
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 282px;
+      width: 100%;
+      opacity: 0.08;
+      content: '';
+      background: url('/img/pricing-back.jpg') no-repeat center center/cover;
+    }
+    .v-card__title {
+      h2 {
+        small {
+        vertical-align: super;
+      }
+    }
+    p {
+      letter-spacing: 6px !important;
+    }
+  }
+  
+  .v-card__text {
+    position: relative;
+    z-index: 2;
+    ul {
+      padding-left: 0 !important;
+      li {
+        line-height: 50px;
+        $paragraph-text: #666;
+      }
+    }
+  }
+  }
+  
+  
+}

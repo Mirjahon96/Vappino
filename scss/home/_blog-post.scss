@@ -1,0 +1,16 @@
+#blog-post {
+  .v-card {
+      a {
+        color: $paragraph-text;
+        transition: color .2s ease-in-out;
+        &:hover {
+          color: $primary-text !important;
+            transition: color .2s ease-in-out;
+           i {
+            color: $primary-text !important;
+            transition: color .2s ease-in-out;
+          }
+        }
+     }
+  }
+}

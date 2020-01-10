@@ -1,0 +1,9 @@
+@mixin white-divider {
+  border-color: #fff;
+  &::before {
+    background: #fff;
+  }
+  &::after {
+    background: #Fff;
+  }
+}

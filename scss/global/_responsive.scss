@@ -1,0 +1,21 @@
+@media (max-width: 960px) {
+  #spec-features {
+    .tab {
+      &.active1::before, &.active1::after,  
+      &.active2::before, &.active2::after {
+        content: none;
+      }
+    }
+  }
+
+  #screenshots .slider {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  #subscribe .img-content {
+    margin-top: 20px;
+    margin-bottom: -150px;
+  }
+}

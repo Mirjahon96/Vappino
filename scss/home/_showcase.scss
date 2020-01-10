@@ -1,0 +1,66 @@
+// Showcase =====================
+#showcase {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(9, 179, 239, 0.9) 0%, rgba(30, 80, 226, 0.9) 100%);
+    z-index: -1;
+  }
+
+  padding-top: 130px;
+  padding-bottom: 30px;
+  background:  url('/img/bg.jpg') no-repeat center top/cover;
+  position: relative;
+  background-attachment: fixed;
+  // height: 100vh;
+  width: 100%;
+  color: #fff;
+  z-index: 1;
+
+  .v-carousel {
+    background: transparent;
+    height: auto !important;
+
+    &__item {
+      height: 100% !important;
+    }
+    &__controls {
+      height: auto !important;
+    }
+  }
+
+  h1 {
+    letter-spacing: 2px !important;
+    text-shadow: 0px 20px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .links {
+    position: relative;
+    padding-left: inherit;
+    padding-right: inherit;
+    h5{
+      &::before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 165px;
+        background: url('/img/arrow.png') no-repeat 0 0;
+        width: 61px;
+        height: 58px;
+      }
+    }
+  }
+
+  .img-content {
+    width: 80%;
+
+    img {
+      max-width: 100%;
+      position: relative;
+    }
+  }
+}

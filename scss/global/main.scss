@@ -1,0 +1,48 @@
+// Home Page
+@import '../global/utilities';
+@import '../global/mixins';
+@import '../global/main-navbar';
+@import '../home/showcase';
+@import '../home/features';
+@import '../home/about';
+@import '../home/spec-features';
+@import '../home/screenshots';
+@import '../home/customers';
+@import '../home/team';
+@import '../home/statistics';
+@import '../home/fqa';
+@import '../home/cta';
+@import '../home/pricing';
+@import '../home/blog-post';
+@import '../home/subscribe';
+@import '../home/info';
+@import '../home/contact';
+@import '../home/footer';
+@import '../global/responsive';
+
+
+html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  color: #fff;
+  background: rgb(12, 93, 243);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li, ol {
+  list-style: none;
+  padding: 0;
+}
+
+// Vuetify Styles
+.v-navigation-drawer {
+  z-index: 100;
+}

@@ -1,0 +1,27 @@
+#subscribe {
+  position: relative;
+  background: url('/img/bg.jpg') no-repeat top center/cover;
+  background-attachment: fixed;
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(9, 179, 239, 0.8) 0%, rgba(30, 80, 226, 0.8) 100%);
+  }
+
+  .divider {
+    @include white-divider;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .img-content {
+    margin-top: 40px;
+    margin-bottom: -180px;
+  }
+}
